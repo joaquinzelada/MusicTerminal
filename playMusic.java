@@ -45,14 +45,19 @@ public class playMusic {
             AudioInputStream archivoDeAudio = AudioSystem.getAudioInputStream(cancion);
             clip.open(archivoDeAudio);
             clip.start();
-            System.out.println("Reproduciendo: " + archivoDeAudio);
+            String nombreCancion = cancion.getName();
+            System.out.println("Reproduciendo: " + nombreCancion + " ♫♫");
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
             System.out.println("Error al reproducir el archivo: " + e.getMessage());
             return;
         }
         while(!entrada.equalsIgnoreCase("S") && !volverMenu) {
             System.out.println("");
-            System.out.println("P = Play ; D = Detener, R = Reiniciar, S = Salir, M = Volver al Menú, N = Canción siguiente, L = Canción anterior");
+            System.out.println("P = Play ; D = Detener ; R = Reiniciar ; S = Salir ; M = Volver al Menú");
+            System.out.println("");
+            System.out.println("[N = Canción siguiente; L = Canción anterior]");
+            System.out.println(" ------------------->   <--------------------");
+            System.out.println("                 (﹙˓ ‍🎧 ˒﹚) ");
             System.out.println("Que querés hacer?");
             entrada = escaner.nextLine().toUpperCase();
 
@@ -78,7 +83,8 @@ public class playMusic {
                         clip = AudioSystem.getClip();
                         clip.open(cancionSiguiente); 
                         clip.start();
-                        System.out.println("Reproduciendo: " + cancionSiguiente);
+                        String nombreCancion = cancion.getName();
+                        System.out.println("Reproduciendo: " + nombreCancion + " ♫♫");
                     } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
                         System.out.println("Error al reproducir el archivo: " + e.getMessage());
 
@@ -94,7 +100,8 @@ public class playMusic {
                         clip = AudioSystem.getClip();
                         clip.open(cancionAnterior); 
                         clip.start();
-                        System.out.println("Reproduciendo: " +cancionAnterior);
+                        String nombreCancion = cancion.getName();
+                        System.out.println("Reproduciendo: " +nombreCancion + " ♫♫");
                     } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
                         System.out.println("Error al reproducir el archivo: " + e.getMessage());
 
@@ -164,7 +171,7 @@ public class playMusic {
                 }
         }
         else { 
-            System.out.println("No hay canciones en la carpeta");
+            System.out.println("No hay canciones en la carpeta, recuerda usar .wav");
         }
         return canciones;
     }
