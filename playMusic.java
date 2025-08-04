@@ -107,7 +107,14 @@ public class playMusic {
 
     }
     public static File[] listarAlbumes(){
-        File albums = new File ("/home/joaquin/MusicTerminal/Albums");
+        File albums = new File ("Albums");
+        if (!albums.exists()) {
+            if (albums.mkdir()) {
+             System.out.println("Carpeta 'Albums' creada (suelta las carpetas de los albumes, y dentro, las canciones en wav)");
+            } else {
+                System.out.println("No se pudo crear la carpeta 'Albums'.");
+            }
+}
         File[] archivos = albums.listFiles();
         if (albums.exists() && albums.isDirectory() && archivos != null){
                 System.out.println("Albumes disponibles: ");
