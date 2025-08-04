@@ -11,7 +11,7 @@ java playMusic
 
 
 #FUNCIÓN PARA AGREGAR AL .BASHRC
-# En .bashrc ejecuto esta función estanteria(): 
+# En .bashrc ejecuto esta función MusicTerminal(): 
 
 MusicTerminal(){
         cd ~/MusicTerminal || return 
