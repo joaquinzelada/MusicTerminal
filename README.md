@@ -1,5 +1,7 @@
 # MusicTerminal
-El código creará una carpeta Albums, aquí deberá agregar una carpeta por álbum y dentro de ella las canciones en .wav
+El código creará una carpeta Albums, aquí deberá agregar una carpeta por álbum y dentro de ella las canciones en .wav 
+
+PD: Hice este código con el conocimiento de mi primer cuatrimestre de la carrera, podría mejorarlo en un futuro y agregar interfaces gráficas. Gracias.
 
 # EJECUCIÓN DEL PROGRAMA:
 # en bash (terminal), ejecutá estos comandos:
